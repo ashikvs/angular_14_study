@@ -1,13 +1,17 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild,AfterViewInit } from '@angular/core';
+import {TopBarComponent} from '../app/top-bar/top-bar.component'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-}
-
+export class AppComponent implements AfterViewInit {
+  @ViewChild(TopBarComponent) top:any;
+  ngAfterViewInit() {
+    this.top.hello() 
+    // I am cool
+  }}
 
 /*
 Copyright Google LLC. All Rights Reserved.

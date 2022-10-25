@@ -11,6 +11,9 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
+import { HighlightDirective } from './highlight.directive';
+import { UserFilterComponent } from './user-filter/user-filter.component';
+import { NameFilterPipe } from './pipes/name-filter.pipe';
 
 @NgModule({
   imports: [
@@ -22,6 +25,7 @@ import { ShippingComponent } from './shipping/shipping.component';
       { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'cart', component: CartComponent },
       { path: 'shipping', component: ShippingComponent },
+      { path: 'user-filter', component: UserFilterComponent },
     ]),
   ],
   declarations: [
@@ -32,6 +36,9 @@ import { ShippingComponent } from './shipping/shipping.component';
     ProductDetailsComponent,
     CartComponent,
     ShippingComponent,
+    HighlightDirective,
+    UserFilterComponent,
+    NameFilterPipe
   ],
   bootstrap: [AppComponent],
 })

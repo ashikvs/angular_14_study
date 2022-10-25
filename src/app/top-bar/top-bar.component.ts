@@ -6,7 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent {
+hello(){
+  console.log('hello world');
 
+  console.log('%c%s', 'color: #ff0000', 'ashik');
+  
+}
 }
 
 

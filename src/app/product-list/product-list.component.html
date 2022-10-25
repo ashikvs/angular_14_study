@@ -3,6 +3,7 @@
 <div *ngFor="let product of products">
   <h3>
     <a
+    [appHighlight]="'green'"
       [title]="product.name + ' details'"
       [routerLink]="['/products', product.id]"
     >
