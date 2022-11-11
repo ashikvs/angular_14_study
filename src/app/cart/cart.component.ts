@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { FormBuilder } from '@angular/forms';
+import { NotificationService } from '../notification.service';
 
 
 @Component({
@@ -13,6 +14,7 @@ export class CartComponent implements OnInit {
   constructor(
     private cartService: CartService,
     private formBuilder: FormBuilder,
+    private notification:NotificationService
 
   ) { 
   }
@@ -23,11 +25,13 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onSubmit(): void {
+  onSubmit() {
     // Process checkout data here
     this.items = this.cartService.clearCart();
     console.warn('Your order has been submitted', this.checkoutForm.value);
     this.checkoutForm.reset();
+    debugger
+    this.notification.sendNotification('item checked out!')
   }
 
 }

@@ -1,7 +1,13 @@
 <a [routerLink]="['/']">
   <h1>My Store</h1>
 </a>
-<a [routerLink]="['/user-filter']">
+<a [routerLink]="['/user-filter',{
+  outlets:{
+    'outlet1':['outlet-test1'],
+    'outlet2':['outlet-test2']
+  }
+}]">
+<span>{{notificationMessage}}</span>
   <h4>user pipe</h4>
 </a>
 

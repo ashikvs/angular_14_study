@@ -1,11 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NotificationService } from '../notification.service';
+
 
 @Component({
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.css']
 })
-export class TopBarComponent {
+export class TopBarComponent implements OnInit {
+  
+  notificationMessage:string='';
+
+  constructor(
+    private notification :NotificationService
+
+  ){
+  }
+
+  ngOnInit() {
+    this.notification.NotificationSubject.subscribe(arg => {
+      this.notificationMessage=arg
+    }
+      );
+    
+  }
 hello(){
   console.log('hello world');
 
